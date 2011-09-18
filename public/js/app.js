@@ -33,6 +33,7 @@ function init() {
 function login() {
     var config = {
 	    'client_id': '1074864873270-4g6n0n3vk0g809e3bt7i05v2osi10qbs.apps.googleusercontent.com',
+	    'key': 'AIzaSyCxxTWP3tWkXkvsv3jx4TuevQ2ymqDCPls',
 		'scope': 'https://www.googleapis.com/auth/prediction',
     };
     googleapis.auth.login(config, checkStatus);
