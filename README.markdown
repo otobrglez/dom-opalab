@@ -13,7 +13,7 @@ Več po postopku je razvidno iz skript v tem [sorodnem projektu](https://github.
 Učenje
 ------
 
-Osnova aplikacije je [Google Prediction API](http://code.google.com/intl/sl-SI/apis/predict/), ki je bil natreniran z pridobljenimi testnimi podatki. Model je bil zgrajen z slednjimi podatki: Cena, Velikost, Vrsta(Hiša,Stanovanje,Zemljišče) in Lokacijo(Maribor,Ljubljana,Velenje...)
+Osnova aplikacije je [Google Prediction API](http://code.google.com/intl/sl-SI/apis/predict/), ki je bil natreniran z pridobljenimi testnimi podatki. Model je bil zgrajen z slednjimi podatki: Cena, Velikost, Vrsta(Hiša,Stanovanje,Zemljišče) in Lokacijo(Maribor,Ljubljana,Velenje...). Podatki, uporabljeni za treniranje se sicer nahajajo v [Google Storage](http://code.google.com/intl/sl-SI/apis/storage/), vendar so navoljo tudi v [Github projektu weka_home](https://github.com/otobrglez/weka_home/blob/master/gohome.csv).
 
 Primer:
 
