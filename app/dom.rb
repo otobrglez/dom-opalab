@@ -9,6 +9,9 @@ Bundler.require
 
 class Dom < Sinatra::Base
 	
+	set :root, File.dirname(__FILE__)
+	set :public, Proc.new { File.join(root, "public") }
+
 	get '/' do
 		@size = params[:size]
 		@size ||= 60
