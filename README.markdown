@@ -8,8 +8,24 @@ Podatki
 -------
 
 Podatki so pridobljeni s pomočjo "grabljenja" podatkov iz spletnih virov.
-Več po postopku je razvidno v tem [sorodnem projektu](https://github.com/otobrglez/weka_home).
+Več po postopku je razvidno iz skript v tem [sorodnem projektu](https://github.com/otobrglez/weka_home).
 
+Učenje
+------
+
+Osnova aplikacije je [Google Prediction API](http://code.google.com/intl/sl-SI/apis/predict/), ki je bil natreniran z pridobljenimi testnimi podatki. Model je bil zgrajen z slednjimi podatki: Cena, Velikost, Vrsta(Hiša,Stanovanje,Zemljišče) in Lokacijo(Maribor,Ljubljana,Velenje...)
+
+Primer:
+
+	259740,2886.00,"Zemljišče","LOGATEC"
+	278000,1006.00,"Zemljišče","LJUBLJANA"
+	1259.785,14821.00,"Zemljišče","LOGATEC"
+	149930,1034.00,"Zemljišče","KRANJ"
+	54505,991.00,"Zemljišče","PTUJ"
+	2001.600,3336.00,"Zemljišče","LJUBLJANA"
+	160310,943.00,"Zemljišče","KAMNIK"
+	650000,2600.00,"Zemljišče","LJUBLJANA"
+	
 
 Avtor
 -----
