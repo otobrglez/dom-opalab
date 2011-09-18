@@ -29,6 +29,8 @@ html
   body
   	div class="content"
   		div class="toolbar"
+  			| Aplikacija uporablja Google Prediction API, za uporabo se prijavite s 
+  			| svojim Google Accountom: 
   			button class="button" name="oauthlogin" Prijava
 
   		div class="header"
@@ -36,9 +38,9 @@ html
   				a href="/" Eksperiment: Vrednost nepremičnine
   			p 
   				| Aplikacija, predvideva vrednost nepremičnine po izbranih kriterijih s pomočjo
-  				| priučenega znanja pridobljenega s "praskanjem" po spletu.
+  				|  priučenega znanja pridobljenega s "praskanjem" po spletu.
 
-  		div class="main"
+  		div class="main" style="display:none;"
   			==yield
 
   		div class="footer"

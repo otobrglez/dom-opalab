@@ -81,9 +81,22 @@ body{
 	left:0px;
 	width:100%;
 	text-align:right;
-	background-color:red;
+	background-color:pink;
+	border-bottom:2px solid red;
+	padding-top:10px;
+	padding-bottom:10px;
+
+	font-weight:bold;
+	color:red;
 }
+
 
 .toolbar .button{
 	margin-right:100px;
+}
+
+#result{
+	font-size:70px;
+	line-height:100px;
+	text-align:center;
 }

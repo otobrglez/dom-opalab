@@ -2,32 +2,25 @@
 
 googleapis.auth.checkLoginComplete();
 
+/* Call prediction API */
 function predict() {
   prediction.predict(
     {'data': 'estates/gohome', 
-     'input': {'csvInstance': [ 60, 'Stanovanje', 'Maribor' ]}})
+     'input': {'csvInstance': getCsvInstance()}})
     .execute(predictionCallback);
-
-   /*
-   prediction.hostedmodels.predict(
-     {'hostedModelName': 'sample.sentiment', 
-      'input': {'csvInstance': [ document.getElementById('predictquery').value ]}})
-     .execute(hostedModelCallback);
-    */
 }
 
-/*
-function sendUpdate(snippet) {
-  prediction.training.update(
-    {'data': 'io11/my_data', 
-     'classLabel': [ document.getElementById('topic').value],
-     'csvInstance': [ snippet ]})
-    .execute(updateCallback);
+/* Build data for call */
+function getCsvInstance(){
+	return [
+		parseFloat($("input[name=size]").val()),
+		$("select[name=type]").val(),
+		$("select[name=location]").val(),
+	];
 }
-*/
 
-function init() {
-    checkStatus();
+function predictionCallback(){
+	
 }
 
 function login() {
@@ -39,20 +32,57 @@ function login() {
 }
 
 function checkStatus() {
-    var token = googleapis.auth.getToken();
+    token = googleapis.auth.getToken();
     
     if (token) {
-    	console.log("Prijavljen... token:" + token);
+    	$(".toolbar").fadeOut("slow");
+    	$(".main").fadeIn("slow");
     } else {
-    	console.log("Odjavljen...");
+
     };
 }
 
+
+function predictionCallback(resp) {
+    if ('error' in resp) {
+    	$(".main").append($('<p>Error: '+resp['error']+'</p>'));
+    };
+
+    $("#result .number").html(formatCurrency(parseInt(resp['outputValue'],10)));
+}
+
+function formatCurrency(num) {
+	num = num.toString().replace(/\$|\,/g,'');
+	if(isNaN(num))
+	num = "0";
+	sign = (num == (num = Math.abs(num)));
+	num = Math.floor(num*100+0.50000000001);
+	cents = num%100;
+	num = Math.floor(num/100).toString();
+	if(cents<10)
+	cents = "0" + cents;
+	for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+	num = num.substring(0,num.length-(4*i+3))+','+
+	num.substring(num.length-(4*i+3));
+	return (((sign)?'':'-') + '' + num + '.' + cents);
+}
+
+var token = false;
 $(document).ready(function(){
-	init();
+	checkStatus();
 
 
 	$("button[name=oauthlogin]").click(function(e){
 		login();
+	});
+
+	$("#predict input[type=submit]").click(function(e){
+		if(e.preventDefault) e.preventDefault();
+		checkStatus();
+		predict();
+	});
+
+	$("#predict form").submit(function(){
+		return false;
 	});
 });

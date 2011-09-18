@@ -15,8 +15,9 @@ class Dom < Sinatra::Base
 		@token = params[:token]
 		@token ||= "none"
 		@size = params[:size]
-		@size ||= 60
-		@locations = %w(Ljubljana Maribor Celje Velenje)
+		@size ||= 0
+		
+		@locations = %w(Ljubljana Maribor Celje Velenje Kranj Koper Ptuj Trbovlje Kamnik Lucija Logatec)
 		@types = %w(Stanovanje Hiša Zemljišče)
 		slim :home
 	end
