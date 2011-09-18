@@ -17,8 +17,23 @@ html
 	meta content='/images/dom_128.png' property='og:image' 
 	meta content='http://dom.opalab.com' property='og:url'
 
-	link href='/images/dom_64.png' rel='shortcut icon'
+	link href='./images/dom_64.png' rel='shortcut icon'
+	link href='./css/app.css' rel='stylesheet' type='text/css'
 
   body
   	div class="content"
-  		==yield
+  		div class="header"
+  			h1
+  				a href="/" Eksperiment: Vrednost nepremičnine
+  			p 
+  				| Aplikacija, predvideva vrednost nepremičnine po izbranih kriterijih s pomočjo priučenega znanja pridobljenega s "praskanjem" po spletu.
+
+  		div class="main"
+  			==yield
+
+  		div class="footer"
+  			a href="http://opalab.com" Oto Brglez - opalab.com 
+  			| |  
+  			a href="https://github.com/otobrglez/dom-opalab" Izvorna koda @ github.com
+
+  		

@@ -1,0 +1,76 @@
+
+
+body,td,th,p,input,label,select,option{
+	font-family:Helvetica, sans-serif;
+	font-size:14px;
+}
+
+body,html,h1,h2,h3,p{
+	margin:0px;
+	padding:0px;
+}
+
+a{
+	text-decoration:none;
+	color:#333;
+}
+
+h1{
+	font-size:28px;
+	color:#666;
+	margin-bottom:15px;
+}
+
+body{
+	text-align:center;
+}
+
+div.content{
+	margin:0px auto;
+	text-align:left;
+	max-width:550px;
+}
+
+h1,h2,h3{
+	font-weight:normal;
+}
+
+body{
+	margin-top:150px;
+}
+
+.header {
+	border-bottom:1px solid #CCC;
+	padding-bottom:10px;
+}
+
+.footer{
+	margin-top:100px;
+	color:#666;
+	text-align:center;
+}
+
+
+#predict{
+	margin:5px;
+}
+
+#predict, #predict input, #predict label,
+#predict select, #predict option
+{
+	font-size:16px;
+	line-height:20px;
+	height:20px;
+}
+
+#predict label{
+	margin-right:5px;
+}
+
+
+.header{
+	background-image:url('/images/dom_128.png');
+	background-position:left center;
+	background-repeat:no-repeat;
+	padding-left:60px;
+}

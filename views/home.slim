@@ -1,1 +1,26 @@
-p Danes je lep dan
+
+div id="predict"
+	form action="/" method="get"
+		label
+			| Velikost [m2]
+			input type="text" name="size" size="5" value=@size
+		
+
+
+		- unless @types.nil?
+			label
+				| Vrsta
+				select name="type"
+					- @types.each do |type|
+						option value="#{type}"
+							=type
+
+		- unless @locations.nil?
+			label
+				| Lokacija
+				select name="location"
+					- @locations.each do |location|
+						option value="#{location.upcase}"
+							=location							
+
+		input type="submit" value="Predvidi!"
