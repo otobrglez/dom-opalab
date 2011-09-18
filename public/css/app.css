@@ -74,3 +74,16 @@ body{
 	background-repeat:no-repeat;
 	padding-left:60px;
 }
+
+.toolbar{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	text-align:right;
+	background-color:red;
+}
+
+.toolbar .button{
+	margin-right:100px;
+}

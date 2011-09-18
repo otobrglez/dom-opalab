@@ -1,8 +1,23 @@
+GIT
+  remote: git://github.com/archiloque/rest-client.git
+  revision: d8ced682ab04007c60d41b293f2c6dc65eac38f9
+  tag: v1.6.6
+  specs:
+    rest-client (1.6.6)
+      mime-types (>= 1.16)
+
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.6)
     diff-lcs (1.1.3)
+    httpadapter (1.0.0)
+      addressable (~> 2.2.0)
+    json (1.6.1)
+    mime-types (1.16)
     rack (1.3.3)
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -11,6 +26,10 @@ GEM
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
+    signet (0.2.2)
+      addressable (~> 2.2.1)
+      httpadapter (~> 1.0.0)
+      json (>= 1.4.6)
     sinatra (1.2.6)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
@@ -24,6 +43,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rack-test
+  rest-client!
   rspec
+  signet
   sinatra
   slim
