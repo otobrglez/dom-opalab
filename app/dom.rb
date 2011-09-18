@@ -11,6 +11,9 @@ class Dom < Sinatra::Base
 	set :public, "public"
 
 	get '/' do
+
+		@token = params[:token]
+		@token ||= "none"
 		@size = params[:size]
 		@size ||= 60
 		@locations = %w(Ljubljana Maribor Celje Velenje)
